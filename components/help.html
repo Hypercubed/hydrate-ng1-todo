@@ -1,0 +1,17 @@
+<h2>What's the problem?</h2>
+<p>Modern Web application all suffer from a blank screen problem.
+The framework code needs to be loaded, then the application, and only then
+the DOM is updated with actual content.</p>
+<p>To fully appreciate the experience, we simulate the network delays
+by delaying the vue.js and application loading by 2 seconds.
+Notice that during the loading delay the user sees a blank white page (bad).
+</p>
+<h3>What is hydration?</h3>
+<p>
+Turn the "Hydration" by checking the box below and reload the page.
+You should see the items as you had them before almost immediately.
+This is "dry" HTML snapshot saved into localStorage and loaded by
+a tiny piece of code "hydration.js" as the page loads.
+The "dry" HTML will be shown while the Vue.js library and the app code is being loaded;
+the switch from "dry" to full app will happen automatically.
+</p>

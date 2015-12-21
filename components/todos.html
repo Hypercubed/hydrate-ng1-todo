@@ -1,0 +1,11 @@
+<h1>{{main.title}}</h1>
+
+<form ng-submit="main.addTodo()">
+  Enter todo: <input ng-model="main.newTodo" placeholder="learn Italian" title="Enter text and press Enter">
+</form>
+<ul>
+  <li ng-repeat="todo in main.todos track by $index">
+    <span ng-bind="todo.text"></span>
+    <button ng-click="main.removeTodo($index)">X</button>
+  </li>
+</ul>

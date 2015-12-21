@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <link href='//rawgit.com/chieffancypants/angular-loading-bar/master/build/loading-bar.css' rel='stylesheet' />
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      .hidden {
+        visibility: hidden;
+        display: none;
+      }
+
+      #app {
+        border: 1px solid white;
+        opacity: 1;
+        display: block !important;
+      }
+
+      #dry-app {  /* visual clue */
+        border: 1px solid grey;
+        opacity: 0.5;
+        display: block !important;
+      }
+    </style>
+  </head>
+
+  <body>
+    <p class="controls">
+    Use hydration:       <input type="checkbox" name="hydrate" id="hydrate" title="Save HTML in localStorage for faster startup on reload" />
+
+    Clear local storage       <button id="clear" title="Clear saved HTML from localStorage">Clear</button>
+    </p>
+    <a href="#/">home</a>
+    <a href="#/help">help</a>
+    <h2>Angular app below</h2>
+    <div id="app" class="hidden">
+      <div ng-view=""></div>
+    </div>
+
+    <script src="scripts/run-hydration-or-not.js"></script>
+    <script src="vendor/hydration.js" id="app" verbose="true" on="hydrate" verbose-ui="true"></script>
+
+    <script src="scripts/load-app.js"></script>
+  </body>
+
+</html>
