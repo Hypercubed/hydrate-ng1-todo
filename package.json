@@ -1,0 +1,40 @@
+{
+  "name": "hydrate-ng1-todo",
+  "version": "1.0.0",
+  "description": "Almost instant angular app init from the HTML stored from previous run",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "live-server app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hypercubed/hydrate-ng1-todo.git"
+  },
+  "author": "J. Harshbarger",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Hypercubed/hydrate-ng1-todo/issues"
+  },
+  "homepage": "https://github.com/Hypercubed/hydrate-ng1-todo#readme",
+  "jspm": {
+    "directories": {
+      "baseURL": "app"
+    },
+    "dependencies": {
+      "angular": "github:angular/bower-angular@^1.4.8",
+      "angular-loading-bar": "github:chieffancypants/angular-loading-bar@^0.8.0",
+      "angular-route": "github:angular/bower-angular-route@^1.4.8",
+      "hydrate-app": "npm:hydrate-app@^1.6.0"
+    },
+    "devDependencies": {
+      "babel": "npm:babel-core@^5.8.24",
+      "babel-runtime": "npm:babel-runtime@^5.8.24",
+      "core-js": "npm:core-js@^1.1.4"
+    }
+  },
+  "devDependencies": {
+    "jspm": "^0.16.19",
+    "live-server": "^0.9.0"
+  }
+}

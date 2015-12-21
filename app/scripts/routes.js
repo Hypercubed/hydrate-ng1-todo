@@ -1,28 +1,15 @@
-/* global angular localStorage bottle */
+/* global localStorage */
 
-angular.module('myApp', ['ngRoute', 'angular-loading-bar'])
-.run(function ($rootScope, $timeout) {
-  $rootScope.$on('$routeChangeStart', function () {
-    // bottle.open();
-  });
+import angular from 'angular';
 
-  $rootScope.$on('$routeChangeSuccess', function () {
-    $timeout(function () {
-      console.log('app is ready');
-      // replaces fake content with live
-      bottle.drink();
-      document.getElementById('app').classList.remove('hidden');
+import MainCtrl from '../components/todos';
 
-      // save the starting HTML
-      bottle.refill();
-    });
-  });
-})
+angular.module('myApp')
 .config(function ($routeProvider, $locationProvider) {
   $routeProvider
   .when('/', {
     templateUrl: 'components/todos.html',
-    controller: 'MainCtrl',
+    controller: MainCtrl,
     controllerAs: 'main',
     resolve: {
      // I will cause a 3 second delay

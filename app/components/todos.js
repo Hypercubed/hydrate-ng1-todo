@@ -1,7 +1,6 @@
 /* global angular localStorage bottle */
 
-angular.module('myApp')
-.controller('MainCtrl', function (todos) {
+function MainCtrl (todos) {
   var main = this;
 
   main.title = 'Hello World';
@@ -31,4 +30,8 @@ angular.module('myApp')
       main.save();
     }
   });
-});
+}
+
+MainCtrl.$inject = ['todos'];
+
+export default MainCtrl;
