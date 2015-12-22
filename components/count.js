@@ -1,16 +1,18 @@
-/* global angular localStorage bottle */
+/* global bottle */
 
-function MainCtrl (todos) {
-  var main = this;
+import angular from 'angular';
 
-  main.title = 'Hello World';
+function CountCtrl (countData) {
+  var count = this;
+
+  count.title = 'Hello World';
 
   console.log('Controller');
 
-  angular.extend(main, {
-    newTodo: '',
-    todos: todos,
-    save: function save () {
+  angular.extend(count, countData);
+
+  angular.extend(count, {
+    /* save: function save () {
       localStorage.setItem('todos', JSON.stringify(main.todos));
       setTimeout(function () {
         // we should save the HTML after it has been rendered
@@ -28,10 +30,10 @@ function MainCtrl (todos) {
     removeTodo: function (index) {
       main.todos.splice(index, 1);
       main.save();
-    }
+    } */
   });
 }
 
-MainCtrl.$inject = ['todos'];
+CountCtrl.$inject = ['countData'];
 
-export default MainCtrl;
+export default CountCtrl;

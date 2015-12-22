@@ -1,1 +1,0 @@
-module.exports = require("npm:hydrate-app@1.6.0/src/main.js");
