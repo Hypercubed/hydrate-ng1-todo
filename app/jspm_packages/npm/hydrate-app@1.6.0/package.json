@@ -1,0 +1,64 @@
+{
+  "name": "hydrate-app",
+  "description": "Quick app pre-loading using saved HTML snapshot",
+  "main": "src/main.js",
+  "version": "1.6.0",
+  "scripts": {
+    "test": "npm run lint",
+    "lint": "standard *.js src/*.js",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post",
+    "commit": "commit-wizard",
+    "build": "webpack --verbose",
+    "size": "t=\"$(npm pack .)\"; wc -c \"${t}\"; tar tvf \"${t}\"; rm \"${t}\";",
+    "deploy": "grunty grunt-gh-pages gh-pages deploy.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bahmutov/hydrate-app.git"
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "keywords": [
+    "web",
+    "app",
+    "web",
+    "application",
+    "performance",
+    "load",
+    "loader"
+  ],
+  "author": "Gleb Bahmutov <gleb.bahmutov@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bahmutov/hydrate-app/issues"
+  },
+  "homepage": "https://github.com/bahmutov/hydrate-app#readme",
+  "devDependencies": {
+    "grunt": "0.4.5",
+    "grunt-gh-pages": "1.0.0",
+    "grunty": "0.2.0",
+    "pre-git": "3.1.1",
+    "semantic-release": "^4.3.5",
+    "standard": "5.4.1",
+    "tiny-overlay": "1.0.0",
+    "tiny-toast": "1.0.0",
+    "webpack": "1.12.9"
+  },
+  "config": {
+    "pre-git": {
+      "commit-msg": [
+        "simple"
+      ],
+      "pre-commit": [
+        "npm run lint"
+      ],
+      "pre-push": [
+        "npm run size"
+      ],
+      "post-commit": [],
+      "post-merge": []
+    }
+  }
+}
